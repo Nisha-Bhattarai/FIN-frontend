@@ -1,0 +1,72 @@
+.container{
+    margin: 0 auto;
+}
+#services{
+    padding: 50px 0;
+}
+#services h1{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+#service-section{
+    display: flex;
+    gap: 10px;
+}
+h2{
+    color: #2F4F4F;
+    font-size: 1.4rem;
+}
+p{
+    font-size: 16px;
+    text-align: justify;
+    text-shadow: 0px 0px 0px rgb(0 0 0 / 30%);
+}
+.fa-regular{
+    font-weight: 600;
+    font-size: 30px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 30px;
+    border-radius: 50%;
+    background-color: #2957A4;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+}
+div#columns{
+    
+    padding: 25px;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    background-color: #FFFFFF;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+}
+#investments h1{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.homeContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    text-align: justify;
+    gap: 20px;
+}
+
+.homeContent img{
+    width: 100%;
+    height: 60%;
+}
+.homeContent div{
+    flex: 1;
+}
+.row2 p,
+.row2 a{
+    font-size: 2px;
+}

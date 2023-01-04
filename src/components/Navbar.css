@@ -1,0 +1,107 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background: #2957a4; */
+    background: white;
+  height: 85px;
+  /* padding: 0.1rem calc((100vw - 1000px) / 2); */
+  padding: 40px 10%;
+  z-index: 120;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar .nav-item{
+    padding: 0 20px;
+    position: relative;
+    font-weight: 600;
+    color: #35424A;
+    transition: 0.3s ease-in-out;
+}
+
+#navbar .nav-item:hover::after,
+#navbar .nav-item.active::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #f48634;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#signInButton{
+    border-radius: 4px;
+  background: #f48634;
+  padding: 10px 22px;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  margin-left: 24px;
+}
+#signInButton:hover{
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #808080;
+}
+#signInButtonMobile{
+    display: none;
+}
+#mobile i {
+    color: #2957A4;
+    font-size: 25px;
+}
+
+#mobile{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    
+    #navbar{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 85px;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background: #487bd1;
+        box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+        padding: 40px 0 0 10px;
+        transition: 0.3s ease-in-out;
+        z-index: 120;
+    }
+    #navbar.active{
+        right: 0px;
+    }
+    #signInButton{
+        display: none;
+    }
+    #signInButtonMobile{
+        display: block;
+    }
+    #navbar li {
+        margin-bottom: 25px;
+    }
+    #mobile{
+        display: block;
+    }
+    #mobile i{
+        cursor: pointer;
+    }
+    nav{
+        padding: 30px;
+    }
+
+}
