@@ -1,5 +1,6 @@
-.container{
-    margin: 0 auto;
+.home-container{
+    margin: auto;
+    width: 90%;
 }
 #services{
     padding: 50px 0;

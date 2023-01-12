@@ -2,16 +2,32 @@ import React, { useState } from "react";
 import logo from "../logo.png";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import { authActions } from "../store";
+axios.defaults.withCredentials = true;
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const [clicked, setClicked] = useState(false);
+
+  const sendLogoutReq = async () => {
+    const res = await axios.post("http://localhost:3001/api/logout", null, {
+      withCredentials: true,
+    });
+    if (res.status === 200) {
+      return res;
+    }
+    return new Error("Unable to logout. Please try again");
+  };
+  const handleLogout = () => {
+    sendLogoutReq().then(() => dispatch(authActions.logout()));
+  };
 
   const handleClick = () => {
     setClicked(!clicked);
   };
 
-  const activeLink = "text-red";
-  const normalLink = "";
   return (
     <React.Fragment>
       <section>
@@ -100,112 +116,41 @@ const Navbar = () => {
             <NavLink
               className="nav-item"
               id="signInButton"
-              to="/sign-in"
+              to="/login"
               style={({ isActive }) => ({
                 color: isActive ? "#f48634" : "#fff",
                 backgroundColor: isActive ? "#fff" : "#f48634",
               })}
             >
-              Sign In
+              Login
             </NavLink>
+            <NavLink
+              className="nav-item"
+              id="signInButton"
+              to="/signup"
+              style={({ isActive }) => ({
+                color: isActive ? "#f48634" : "#fff",
+                backgroundColor: isActive ? "#fff" : "#f48634",
+              })}
+            >
+              Register
+            </NavLink>
+
+            {isLoggedIn && (
+              <NavLink
+                className="nav-item"
+                id="signInButton"
+                to="/"
+                onClick={handleLogout}
+                style={({ isActive }) => ({
+                  color: isActive ? "#f48634" : "#fff",
+                  backgroundColor: isActive ? "#fff" : "#f48634",
+                })}
+              >
+                Logout
+              </NavLink>
+            )}
           </div>
-          {/* <a href="/">
-          <img src={logo} alt="Logo" style={{ width: "60px" }} />
-        </a>
-
-        <div>
-          <ul id="navbar" className={clicked ? "#navbar active" : "#navbar"}>
-            <li>
-              <a
-                href="/"
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
-              >
-                Home
-              </a>
-            </li>
-            <li className="nav-item ">
-              <a
-                href="/about"
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
-              >
-                About Us
-              </a>
-            </li>
-            <li className="item">
-              <a
-                href="/our-services"
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
-              >
-                Our Services
-              </a>
-            </li>
-            <li className="item">
-              <a
-                href="/investments"
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
-              >
-                Our Investments
-              </a>
-            </li>
-            <li className="item">
-              <a
-                href="/team"
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
-              >
-                Teams
-              </a>
-            </li>
-            <li className="item">
-              <a
-                href="/blogs"
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
-              >
-                Blogs
-              </a>
-            </li>
-            <li className="item">
-              <a
-                href="/contact"
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
-              >
-                Contact Us
-              </a>
-            </li>
-            <li id="signInButtonMobile" className="item">
-              <a
-                href="sign-in"
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
-              >
-                Sign In
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <ul id="signInButton">
-            <li>
-              <a href="sign-in">Sign In</a>
-            </li>
-          </ul>
-        </div> */}
-
           <div id="mobile" onClick={handleClick}>
             <i
               id="bar"

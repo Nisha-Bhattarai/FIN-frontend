@@ -5,15 +5,15 @@ import house from "../house.jpg";
 
 function HomeContentSection() {
   return (
-    <div className="container">
+    <div className="home-container">
       <div id="services">
-        <h1>Our Services</h1>
+        <h1>Main Heading (To be changed)</h1>
         <div id="service-section">
           <div id="columns">
             <div id="icon">
               <i className="fa-regular fa-arrow-up-right-dots"></i>
             </div>
-            <h2>Investment</h2>
+            <h2>Heading (To be changed)</h2>
             <p>
               As a private investment firm, we work together to create long term
               value for our investors and shareholders.
@@ -23,7 +23,7 @@ function HomeContentSection() {
             <div id="icon">
               <i className="fa-regular fa-arrow-up-right-dots"></i>
             </div>
-            <h2>Investment</h2>
+            <h2>Heading (To be changed)</h2>
             <p>
               As a private investment firm, we work together to create long term
               value for our investors and shareholders.
@@ -33,7 +33,7 @@ function HomeContentSection() {
             <div id="icon">
               <i className="fa-regular fa-arrow-up-right-dots"></i>
             </div>
-            <h2>Investment</h2>
+            <h2>Heading (To be changed)</h2>
             <p>
               As a private investment firm, we work together to create long term
               value for our investors and shareholders.
@@ -43,7 +43,7 @@ function HomeContentSection() {
             <div id="icon">
               <i className="fa-regular fa-arrow-up-right-dots"></i>
             </div>
-            <h2>Investment</h2>
+            <h2>Heading (To be changed)</h2>
             <p>
               As a private investment firm, we work together to create long term
               value for our investors and shareholders.
@@ -52,10 +52,10 @@ function HomeContentSection() {
         </div>
       </div>
       <div id="investments">
-        <h1>Our Investments</h1>
+        <h1>Main Heading (To be changed)</h1>
         <div className="homeContent">
           <div className="row1">
-            <h1>Bitcoin</h1>
+            <h1>Heading (To be changed)</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue
               lacus magna, eu sollicitudin quam posuere sed. Nam in condimentum
@@ -83,7 +83,7 @@ function HomeContentSection() {
             <img src={house} />
           </div>
           <div>
-            <h1>Condominium</h1>
+            <h1>Heading (To be changed)</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue
               lacus magna, eu sollicitudin quam posuere sed. Nam in condimentum

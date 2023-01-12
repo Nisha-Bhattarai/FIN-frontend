@@ -1,0 +1,49 @@
+.container{
+    margin: 0 auto; 
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ .form h1{
+     font-size: 32px;
+     font-weight: bold;
+ }
+ 
+ .form{
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     align-items: center;
+     width: 50%;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+     padding: 50px;
+ }
+ 
+ form{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     gap: 10px;
+     align-items: center;
+     width: 100%;
+ }
+ 
+
+ .MuiFormControl-root{
+     width: 100%;
+     border: 1px solid #C5C5C5;
+     padding: 10px;
+     border-radius: 10px;
+ }
+.MuiButtonBase-root{
+     border-radius: 4px;
+     background: #f48634;
+     padding: 10px 22px;
+     color: #fff;
+     outline: none;
+     border: none;
+     cursor: pointer;
+     transition: all 0.2s ease-in-out;
+ }
